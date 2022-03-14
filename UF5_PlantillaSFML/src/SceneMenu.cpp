@@ -1,5 +1,6 @@
 #include "SceneMenu.h"
 #include "Singletons.h"
+#include <iostream>
 
 SceneMenu::SceneMenu() : Scene() {};
 SceneMenu::~SceneMenu() {};

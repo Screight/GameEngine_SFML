@@ -66,7 +66,7 @@ private:
 		Renderer();
 		~Renderer();
 
-		static Renderer*		p_instance;
+		static Renderer*		m_instance;
 		sf::RenderWindow*		m_window;
 
 		int									m_windowWidth;

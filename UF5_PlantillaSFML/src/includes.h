@@ -57,9 +57,7 @@ typedef struct {
 
 // Tiempo pasado entre frames
 extern unsigned int global_delta_time;
-extern bool key_pressed[255];
-extern bool key_down[255];
-extern bool key_released[255];
+
 
 //Eliminar vectores de punteros
 template <class C> void FreeClear( C & cntr ) {

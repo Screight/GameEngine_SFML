@@ -1,11 +1,14 @@
 #include "Scene.h"
 #include "Singletons.h"
 
+Scene::Scene() {};
+Scene::~Scene() {};
+
 void Scene::PreLoad() {};
 void Scene::OnLoad() {
 		if (m_isSceneLoaded) return;
 		Initialize();
-		// Clear input
+		g_inputManager->ClearInput();
 		m_isSceneLoaded = true;
 };
 void Scene::OnUpdate() {

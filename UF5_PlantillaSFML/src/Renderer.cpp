@@ -1,13 +1,13 @@
 #include "Renderer.h"
 #include "Singletons.h"
 
-Renderer* Renderer::p_instance = NULL;
+Renderer* Renderer::m_instance = NULL;
 
 Renderer* Renderer::GetInstance() {
-		if (p_instance == NULL) {
-				p_instance = new Renderer();
+		if (m_instance == NULL) {
+				m_instance = new Renderer();
 		}
-		return p_instance;
+		return m_instance;
 }
 
 Renderer::Renderer(): m_window(NULL) {

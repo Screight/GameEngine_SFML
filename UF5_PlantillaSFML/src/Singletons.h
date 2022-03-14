@@ -3,10 +3,12 @@
 
 #include "Renderer.h"
 #include "ResourceManager.h"
+#include "InputManager.h"
 
-void InitializeSingetons();
+void InitializeSingletons();
 
 extern Renderer*				g_renderer;
 extern ResourceManager*	g_resourceManager;
+extern InputManager*		g_inputManager;
 
 #endif
