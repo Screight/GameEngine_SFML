@@ -1,4 +1,5 @@
 #include "Renderer.h"
+#include "Singletons.h"
 
 Renderer* Renderer::p_instance = NULL;
 
@@ -75,4 +76,13 @@ void Renderer::DrawRectangleGradient(C_Rectangle p_rectangle, Color p_color_1, C
 
 void Renderer::DrawCircle() {
 
+}
+
+void Renderer::DrawSprite(int p_id, int p_positionX, int p_positionY, C_Rectangle p_cutOffRectangle, Color p_color) {
+		if (p_id <= -1) { return; }
+		sf::Sprite* sprite = g_resourceManager->GetSpriteByID(p_id);
+		sprite->setColor(sf::Color(p_color.red, p_color.green, p_color.blue));
+		sprite->setTextureRect(sf::IntRect(p_cutOffRectangle.x, p_cutOffRectangle.y, p_cutOffRectangle.w, p_cutOffRectangle.h));
+		sprite->setPosition(sf::Vector2f(p_positionX, p_positionY));
+		m_window->draw(*sprite);
 }

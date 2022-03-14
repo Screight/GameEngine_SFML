@@ -2,6 +2,14 @@
 
 ResourceManager* ResourceManager::p_instance = NULL;
 
+ResourceManager::ResourceManager():
+				m_firstFreeSlot(0)
+		{}
+
+ResourceManager::~ResourceManager() {
+
+}
+
 ResourceManager* ResourceManager::GetInstance() {
 		if (p_instance == NULL) {
 				p_instance = new ResourceManager();
@@ -26,14 +34,24 @@ int ResourceManager::GetSpriteID(const char* p_filePath) {
 						return SearchSprite(iterator->second);
 				}
 		}
-
 };
+
 sf::Sprite* ResourceManager::GetSpriteByID(int p_id) {
 		if (p_id >= 0 && m_spritesVector.size()) { return m_spritesVector[p_id]; }
 		else { return NULL; }
 };
-unsigned int ResourceManager::GetSpriteWidth(int p_ide) {};
-unsigned int ResourceManager::GetSpriteHeight(int p_ide) {};
+
+unsigned int ResourceManager::GetSpriteWidth(int p_id) {
+		sf::Sprite* sprite = GetSpriteByID(p_id);
+		if (sprite == NULL) { return - 1; }
+		return sprite->getTexture()->getSize().x;
+};
+
+unsigned int ResourceManager::GetSpriteHeight(int p_id) {
+		sf::Sprite* sprite = GetSpriteByID(p_id);
+		if (sprite == NULL) { return -1; }
+		return sprite->getTexture()->getSize().y;
+};
 
 int ResourceManager::SearchSprite(sf::Sprite* p_sprite) {
 		int size = m_spritesVector.size();

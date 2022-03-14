@@ -1,23 +1,41 @@
 #include <SFML/Graphics.hpp>
-#include "Renderer.h"
+#include "Singletons.h"
+#include "Scene.h"
+
 #include <iostream>
+
+void MainLoop();
 
 int main()
 {
-		Renderer* render = Renderer::GetInstance();
-		render->SetFramerateLimit(60);
+		InitializeSingetons();
+		g_renderer->SetFramerateLimit(60);
+		
 		
 
-		while (true) {
-				render->ClearWindow();
-				render->DrawRectangle(C_Rectangle{100,100,50,50}, Color{ 0,0,255 }, true);
-				render->DrawRectangleGradient(	C_Rectangle{200,200,50,50 },
-																				Color{ 255,0,0 },
-																				Color{ 0,255,0 },
-																				Color{ 0,0,255 },
-																				Color{ 255,0,255 });
-				render->RefreshWindow();
+	return 0;
+}
+
+void MainLoop() {
+		g_renderer->SetFramerateLimit(60);
+		const clock_t beginTime = clock();
+		clock_t oldTime = beginTime;
+		clock_t newTime = beginTime;
+
+		Scene* currentScene = new Scene();
+
+		while (g_renderer->IsWindowOpen()) {
+				// Delta time update
+				oldTime = newTime;
+				newTime = clock() - beginTime;
+				global_delta_time = int(newTime - oldTime);
+
+				// Engine input update
+
+				// Update and rende Scene
+				currentScene->OnLoad();
+				currentScene->OnUpdate();
+				currentScene->OnRender();
 		}
 
-	return 0;
 }

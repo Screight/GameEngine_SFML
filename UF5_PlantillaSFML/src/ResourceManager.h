@@ -1,5 +1,5 @@
-#ifndef RESOURCE_MANAGER
-#define RESOURCE_MANAGER
+#ifndef RESOURCE_MANAGER_H
+#define RESOURCE_MANAGER_H
 
 #include "includes.h"
 #include <vector>
@@ -17,8 +17,8 @@ public:
 
 		int							GetSpriteID(const char* p_filePath);
 		sf::Sprite*			GetSpriteByID(int p_id);
-		unsigned int		GetSpriteWidth(int p_ide);
-		unsigned int		GetSpriteHeight(int p_ide);
+		unsigned int		GetSpriteWidth(int p_id);
+		unsigned int		GetSpriteHeight(int p_id);
 
 
 private:
