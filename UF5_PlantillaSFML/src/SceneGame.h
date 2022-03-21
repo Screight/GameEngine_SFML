@@ -1,12 +1,12 @@
-#ifndef SCENE_MENU_H
-#define SCENE_MENU_H
+#ifndef SCENE_GAME_H
+#define SCENE_GAME_H
 
 #include "Scene.h"
 
-class SceneMenu : public Scene {
+class SceneGame : public Scene {
 public:
-		SceneMenu();
-		~SceneMenu();
+		SceneGame();
+		~SceneGame();
 
 		virtual void PreLoad();
 
@@ -23,7 +23,6 @@ protected:
 
 		virtual void RenderGUI();
 
-		int m_backgroundID;
 };
 
 #endif // !SCENE_MENU_H

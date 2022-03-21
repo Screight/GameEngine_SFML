@@ -1,7 +1,9 @@
 #include "Scene.h"
 #include "Singletons.h"
 
-Scene::Scene() {};
+Scene::Scene() {
+		m_isSceneLoaded = false;
+};
 Scene::~Scene() {};
 
 void Scene::PreLoad() {};

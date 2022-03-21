@@ -86,3 +86,8 @@ void Renderer::DrawSprite(int p_id, int p_positionX, int p_positionY, C_Rectangl
 		sprite->setPosition(sf::Vector2f(p_positionX, p_positionY));
 		m_window->draw(*sprite);
 }
+
+void Renderer::DrawSprite(int p_id, int p_positionX, int p_positionY, Color p_color)
+{
+		DrawSprite(p_id, p_positionX, p_positionY, C_Rectangle{0,0, g_resourceManager->GetSpriteWidth(p_id), g_resourceManager->GetSpriteHeight(p_id)}, p_color);
+}

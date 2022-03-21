@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include "Singletons.h"
-#include "SceneMenu.h"
 
 #include <iostream>
 
@@ -24,8 +23,6 @@ void MainLoop() {
 		clock_t oldTime = beginTime;
 		clock_t newTime = beginTime;
 
-		Scene* currentScene = new SceneMenu();
-
 		while (g_renderer->IsWindowOpen()) {
 				// Delta time update
 				oldTime = newTime;
@@ -36,6 +33,8 @@ void MainLoop() {
 				g_inputManager->UpdateEvents();
 
 				// Update and rende Scene
+				Scene* currentScene = g_sceneDirector->GetCurrentScene();
+
 				currentScene->OnLoad();
 				currentScene->OnUpdate();
 				currentScene->OnRender();

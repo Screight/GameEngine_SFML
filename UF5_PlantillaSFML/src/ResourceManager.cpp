@@ -78,6 +78,7 @@ int ResourceManager::GetTextureID(const char* p_filePath) {
 				}
 				else { return iterator->second; }
 		}
+		return returnValue;
 };
 int ResourceManager::AddTexture(const char* p_filePath) {
 		sf::Texture* texture = new sf::Texture();
@@ -105,7 +106,7 @@ int ResourceManager::AddTexture(const char* p_filePath) {
 		return -1;
 };
 sf::Texture* ResourceManager::GetTextureByID(int p_id) {
-		if (p_id >= 0 && m_spritesVector.size()) { return m_textureVector[p_id]; }
+		if (p_id >= 0 && p_id < m_textureVector.size()) { return m_textureVector[p_id]; }
 		else { return NULL; }
 };
 int ResourceManager::UpdateFirstFreeSlot() {

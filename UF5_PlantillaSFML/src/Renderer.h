@@ -60,7 +60,15 @@ public:
 		/// <param name="p_color"></param>
 		void DrawSprite(int p_id, int p_positionX, int p_positionY, C_Rectangle p_cutOffRectangle, Color p_color = {255,255,255});
 
-
+		/// <summary>
+/// Draws a sprite with it cut-off rectangle
+/// </summary>
+/// <param name="p_id"> the id of the sprite to render</param>
+/// <param name="p_positionX"></param>
+/// <param name="p_positionY"></param>
+/// <param name="p_cutOffRectangle"> a rectangle that represents the area of the image that is gonna be rendered</param>
+/// <param name="p_color"></param>
+		void DrawSprite(int p_id, int p_positionX, int p_positionY, Color p_color = { 255,255,255 });
 
 private:
 		Renderer();

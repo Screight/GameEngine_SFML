@@ -2,6 +2,7 @@
 #define INCLUDES_H
 
 #include <string>
+#include <stack>
 #include <vector>
 #include <iostream>
 #include <fstream>
