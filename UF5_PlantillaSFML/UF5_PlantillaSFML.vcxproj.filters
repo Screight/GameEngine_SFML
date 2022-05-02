@@ -45,6 +45,12 @@
     <ClCompile Include="src\SceneDirector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SoundManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Renderer.h">
@@ -75,6 +81,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SceneDirector.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoundManager.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

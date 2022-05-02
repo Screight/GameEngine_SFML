@@ -9,6 +9,7 @@
 #include <sstream>
 #include <stdio.h>
 #include "math.h"
+#include <map>
 
 #define SCREEN_WIDTH 960
 #define SCREEN_HEIGHT 540
@@ -69,5 +70,8 @@ template <class C> void FreeClear( C & cntr ) {
     cntr.clear();
 	cntr.shrink_to_fit(); //Hace que la memoria reservada sea la necesaria para el nuevo tamaño (0)
 }
+
+enum class Direction { NONE, UP, DOWN, LEFT, RIGHT, LAST_NO_USE };
+enum class PlayerAnimations { WALK_TOP, WALK_BOTTOM, WALK_LEFT, WALK_RIGHT, LAST_NO_USE };
 
 #endif

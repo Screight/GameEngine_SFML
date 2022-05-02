@@ -43,7 +43,7 @@ void SceneDirector::PreLoadScenes()
 		for (int i = 0; i < SceneDirector::LAST_NO_USE; i++) {
 				m_scenes[i]->PreLoad();
 
-				m_currentScene = m_scenes[MAINMENU];
+				m_currentScene = m_scenes[GAME];
 		}
 
 }
