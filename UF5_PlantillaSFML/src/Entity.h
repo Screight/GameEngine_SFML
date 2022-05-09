@@ -1,11 +1,8 @@
-#pragma once
-#ifndef PACMAN_H
-#define PACMAN_H
+#ifndef ENTITY_H
+#define ENTITY_H
 
 #include "includes.h"
 #include "Singletons.h"
-
-
 
 typedef struct {
 		int numberOfFrames;
@@ -18,46 +15,27 @@ public:
 		Entity();
 		~Entity();
 
-		void update();
-		void render();
+		virtual void Update() = 0;
+		virtual void Render() = 0;
 
-		void setX(int x);
-		void setY(int y);
+		virtual void SetX(int x);
+		virtual void SetY(int y);
+		C_Rectangle GetRect() { return m_rect; }
 
-		void setCollisionMap(std::vector<std::vector<bool>>* colMap);
-		C_Rectangle getRect() { return mRect; }
+protected:
+		virtual void	UpdateInput() = 0;
+		virtual void	UpdateGraphics() = 0;
 
-		Direction GetDirection();
-		void SetSpeed(int p_value) { mSpeed = p_value; };
-		int GetSpeed() { return mSpeed; };
-private:
-		void	updateInput();
-		void	updateGraphics();
-		void	move();
+		Color		m_color;
+		C_Rectangle	m_rect;
 
-		bool getCollisionWithMap(int x, int y);
+		int m_sprite;
+		C_Rectangle m_imgRect;
 
-		Color		mColor;
-		C_Rectangle	mRect;
-
-		std::vector<std::vector<bool>>* mpCollisionMap;
-		int mMapH;
-		int mMapW;
-
-		//Movement variables
-		Direction	mDirection;
-		int			mXtoGo;
-		int			mYtoGo;
-		bool		mMoving;
-		int			mSpeed;
-
-		int mSprite;
-		C_Rectangle mImgRect;
-
-		int mFrame;
-		int mMaxFrames;
-		int mCurrentFrameTime;
-		int mNextFrameTime;
+		int m_frame;
+		int m_maxFrames;
+		int m_currentFrameTime;
+		int m_nextFrameTime;
 
 		std::vector<Animations> m_animations;
 

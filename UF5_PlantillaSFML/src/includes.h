@@ -72,6 +72,7 @@ template <class C> void FreeClear( C & cntr ) {
 }
 
 enum class Direction { NONE, UP, DOWN, LEFT, RIGHT, LAST_NO_USE };
-enum class PlayerAnimations { WALK_TOP, WALK_BOTTOM, WALK_LEFT, WALK_RIGHT, LAST_NO_USE };
+enum class PlayerAnimations { WALK_TOP, WALK_BOTTOM, WALK_LEFT, WALK_RIGHT, IDLE_TOP, IDLE_BOTTOM, IDLE_LEFT, IDLE_RIGHT, LAST_NO_USE };
+enum class PlayerAttack { ATTACK_TOP, ATTACK_BOTTOM, ATTACK_LEFT, ATTACJ_RIGHT, LAST_NO_USE};
 
 #endif

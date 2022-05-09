@@ -2,7 +2,7 @@
 #define SCENE_GAME_H
 
 #include "Scene.h"
-#include "Entity.h"
+#include "Player.h"
 
 class SceneGame : public Scene {
 public:
@@ -27,7 +27,7 @@ protected:
 		virtual void loadMap();
 		virtual void renderMap();
 
-		Entity* m_player;
+		Player* m_player;
 		int mpMapWidth = 0;
 		int mpMapHeight = 0;
 		std::vector<std::vector<bool>> mpCollisionMap;

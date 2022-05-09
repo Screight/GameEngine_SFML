@@ -6,7 +6,7 @@ SceneGame::SceneGame() : Scene() {};
 SceneGame::~SceneGame() {};
 
 void SceneGame::PreLoad() {
-		m_player = new Entity();
+		m_player = new Player();
 		mwallImg = g_resourceManager->GetSpriteID("Assets/wall.png");
 		loadMap();
 };
@@ -17,13 +17,13 @@ void SceneGame::Initialize() {
 
 void SceneGame::EarlyUpdate() {};
 void SceneGame::Update() {
-		m_player->update();
+		m_player->Update();
 };
 void SceneGame::LateUpdate() {};
 
 void SceneGame::EarlyRender() {};
 void SceneGame::Render() {
-		m_player->render();
+		m_player->Render();
 		renderMap();
 };
 void SceneGame::LateRender() {};
@@ -62,8 +62,8 @@ void SceneGame::loadMap() {
 								collision = true;
 								break;
 						case 'P':
-								m_player->setX(i*TILE_SIZE);
-								m_player->setY(j*TILE_SIZE);
+								m_player->SetX(i*TILE_SIZE);
+								m_player->SetY(j*TILE_SIZE);
 								break;
 						}
 						mpCollisionMap[j][i] = collision;
@@ -71,7 +71,7 @@ void SceneGame::loadMap() {
 				j++;
 		}
 		file.close();
-		m_player->setCollisionMap(&mpCollisionMap);
+		m_player->SetCollisionMap(&mpCollisionMap);
 }
 
 void SceneGame::renderMap() {
